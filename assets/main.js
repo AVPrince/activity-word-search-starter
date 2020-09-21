@@ -7,10 +7,30 @@
 
 // TODO 1: Use querySelector to assign EACH of the above 
 // elements to a variable, just like this:
+let textBox = document.querySelector("#textbox")
 let searchButton = document.querySelector('#search-button')
+let sentenceBlockQuote = document.querySelector('#sentence')
+let searchResults = document.querySelector('#search-results')
 
 searchButton.addEventListener('click', function () {
- 
+    if (sentenceBlockQuote.innerText.includes(textBox.value)){
+      console.log('It\'s a match!');
+      searchResults.innerText = "A match was found!"
+    } else {
+      searchResults.innerText = "Not Found."
+      console.log("Not Found.");
+    } 
+
+    // console.log('text box: ', textBox);
+    // console.log('user input: ', textBox.value);
+    // console.log('sentence', sentenceBlockQuote.innerText);
+    // console.log('textBox included in sentenceBlockQuote',sentenceBlockQuote.innerText.includes(textBox.value));
+
+    // let mySentence = "Alan is a nice guy"
+    // let word = 'nice'
+    // console.log('word included in mySentence',mySentence.includes(word));
+
+
   // TODO 2: Write an IF statement which determines whether
   // the user-supplied string from #textbox is included in
   // the #sentence string.
@@ -21,7 +41,7 @@ searchButton.addEventListener('click', function () {
 
   // Hint 2: To get the string contained within #sentence, use
   // the property .innerText on the variable you assigned the
-  // #sentence element to.
+  // #sentence element to. 
 
   // Hint 3: You can check whether string1 contains string2
   // by using string1.includes(string2) – which will return
